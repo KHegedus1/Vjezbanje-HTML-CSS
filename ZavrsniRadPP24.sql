@@ -37,3 +37,4 @@ create table adresa(
  proizvod       int not null
 );
 
+alter table kosarica add foreign key (kupac) references kupac(sifra);
