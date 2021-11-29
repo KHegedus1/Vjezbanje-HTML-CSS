@@ -17,23 +17,23 @@ create table proizvod(
     sifra       int not null primary key auto_increment,
     naziv       varchar (50),
     cijena      decimal(18,2),
-    kolicina    int,not null
-    kupac       int,not null
+    kolicina    int not null,
+    kupac       int not null
 );
 
 create table kosarica(
     sifra       int not null primary key auto_increment,
-    kupac       int,not null
-    klijent     int,not null 
-    proizvod    int,not null 
+    kupac       int not null,
+    klijent     int not null,
+    proizvod    int not null 
 );
 
 create table adresa(
  sifra          int not null primary key auto_increment,
  postanskibroj  varchar(50)not null,
  ulica          varchar(50)not null,
- kucnibroj      int,not null,
- kupac          int,not null,
- proizvod       int,not null
+ kucnibroj      int not null,
+ kupac          int not null,
+ proizvod       int not null
 );
 
