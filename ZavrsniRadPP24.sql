@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 drop database if exists ZavrsniRadPP24;
 create database ZavrsniRadPP24 character set utf8;
 
@@ -43,11 +42,10 @@ alter table adresa   add foreign key (kupac)     references kupac(sifra);
 alter table adresa   add foreign key (proizvod)  references proizvod(sifra);
 alter table proizvod add foreign key (kupac)     references kupac(sifra);
 alter table kosarica add foreign key (proizvod)  references proizvod(sifra);
-=======
 drop database if exists ZavrsniRadPP24;
 create database ZavrsniRadPP24 character set utf8;
 
-use ZavrsniRadPP24;
+use ZavrsniRadPP24; 
 
 create table kupac(
     sifra       int not null primary key auto_increment,
@@ -88,5 +86,4 @@ alter table adresa   add foreign key (kupac)     references kupac(sifra);
 alter table adresa   add foreign key (proizvod)  references proizvod(sifra);
 alter table proizvod add foreign key (kupac)     references kupac(sifra);
 alter table kosarica add foreign key (proizvod)  references proizvod(sifra);
->>>>>>> 608a275e09763b60a1ad45cec4638252c094f13b
  
