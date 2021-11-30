@@ -82,7 +82,7 @@ create table adresa(
 );
 
 alter table kosarica add foreign key (kupac)     references kupac(sifra);
-alter table adresa   add foreign key (kupac)     references kupac(sifra);
+alter table adresa   add forign key (kupac)     references kupac(sifra);
 alter table adresa   add foreign key (proizvod)  references proizvod(sifra);
 alter table proizvod add foreign key (kupac)     references kupac(sifra);
 alter table kosarica add foreign key (proizvod)  references proizvod(sifra);
