@@ -96,3 +96,6 @@ alter table adresa   add foreign key (proizvod)  references proizvod(sifra);
 alter table proizvod add foreign key (kupac)     references kupac(sifra);
 alter table kosarica add foreign key (proizvod)  references proizvod(sifra);
  
+ insert into operater(email,lozinka,ime,prezime,uloga) values
+# lozinka a
+('admin@edunova.hr','$2a$12$gcFbIND0389tUVhTMGkZYem.9rsMa733t9J9e9bZcVvZiG3PEvSla','Administrator','Edunova','admin'),
