@@ -3,6 +3,15 @@ create database ZavrsniRadPP24 character set utf8;
 
 use ZavrsniRadPP24;
 
+create table operater(
+    sifra           int not null primary key auto_increment,
+    email           varchar(50) not null,
+    lozinka         char(60) not null, 
+    ime             varchar(50) not null,
+    prezime         varchar(50) not null,
+    uloga           varchar(10) not null
+);
+
 create table kupac(
     sifra       int not null primary key auto_increment,
     ime         varchar(50) not null,
