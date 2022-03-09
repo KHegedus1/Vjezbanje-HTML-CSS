@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf8mb4">
+	<title>Webshop-zavrsni rad</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<!-- Top bar -->
+	<div id="topBarWrap">
+		<div id="topBar">
+			<div id="topBarCol1">
+				<p>Webshop</p>                   
+			</div>
+			<div id="topBarCol2">
+				<p><img src="images/WebshopHeader.png" width="180px"></p>
+			</div>
+			<div id="topBarCol3">
+				<p>webshop@webshop.com</p>	
+			</div>
+			<div style="clear: both;"></div>
+		</div>
+	</div>
+	<!-- Menu bar -->
+	<div id="menuBarWrap">
+		<div id="menuBar">
+			<div id="menuBarCol1">
+				<h1><img src="images/WebshopLogo.jpg"width="80px"></h1>
+			</div>
+			<div id="menuBarCol2">	
+				<ul>
+					<li><a href="noviProizvodi.html">Novi proizvodi</a></li>
+					<li><a href="prednarudzbe.html">Prednarudžbe</a></li>
+					<li><a href="oNama.html">O Nama</a></li>
+					<li><a href="kontakti.html">Kontakti</a></li>
+				</ul>
+			</div>
+			<div style="clear: both;"></div>
+	    </div>
+	</div>
+	</div>	
+	<!-- Slideshow -->
+  <div class="slideshow-container">
+  <div class="mySlides fade">
+   <div class="numbertext">1 / 3</div>
+    <img src="images/img1.jpg" class="slideshow" style="width:100%">
+    </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="images/img2.jpg" class="slideshow" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="images/img3.jpg" class="slideshow" style="width:100%">
+  </div>
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+<div id="divFooterWrap">
+		<div id="divFooter">
+			<p><img src="images/footerSlika.jpg"width="1400px"></p>
+			<p>Kristijan Hegeduš-Završni rad</p>
+		</div>
+</div>
+</body>
+</html>
