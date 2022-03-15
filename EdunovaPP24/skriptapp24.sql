@@ -1,18 +1,16 @@
-# Ovo je komentar i ne utječe na izvođenje
 drop database if exists edunovapp24;
-create database edunovapp24 character set utf8mb4;
-# otvoriti cmd i zaljepiti sljedeći red bez # - pripaziti na putanju sql datoteke
-# c:\xampp\mysql\bin\mysql -uedunova -pedunova --default_character_set=utf8 < C:\Users\CP\Documents\PP24\EdunovaPP24\skriptapp24.sql
+create database edunovapp24 character set utf8;
+# c:\xampp\mysql\bin\mysql -uedunova -pedunova --default_character_set=utf8 < C:\Users\CP\Documents\PP24\EdunovaPP24\skriptapp24.sql 
 
 use edunovapp24;
 
 # za server
-alter database cesar_edunovapp24 character set utf8mb4;
+alter database ZavrsniRadPP24_edunovapp24 character set utf8;
 
 create table operater(
     sifra           int not null primary key auto_increment,
     email           varchar(50) not null,
-    lozinka         char(60) not null, # čitati https://medium.com/analytics-vidhya/password-hashing-pbkdf2-scrypt-bcrypt-and-argon2-e25aaf41598e
+    lozinka         char(60) not null, 
     ime             varchar(50) not null,
     prezime         varchar(50) not null,
     uloga           varchar(10) not null
