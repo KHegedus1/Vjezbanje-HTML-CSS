@@ -1,0 +1,13 @@
+Generiran je slučajni broj <?=$slucajniBroj?>
+<hr>
+<h1><?=$skola?></h1>
+<p><?=$voditelj->ime?> <?=$voditelj->prezime?></p>
+<ol>
+    <?php foreach($gradovi as $grad): ?>
+        <li><?=$grad?></li>
+    <?php endforeach;?>
+</ol>
+
+<pre>
+    <?php print_r($parametri); ?>
+</pre>

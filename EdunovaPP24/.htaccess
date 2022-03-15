@@ -1,0 +1,13 @@
+# omogućiti URL rewrite
+RewriteEngine On
+
+# Postavljanje na ubutu serveru: https://www.digitalocean.com/community/tutorials/how-to-rewrite-urls-with-mod_rewrite-for-apache-on-ubuntu-16-04
+
+# preskoči ukoliko postoji datoteka
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# preskoči ukoliko postoji direktorij
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# svi zahtjevi idu na idex.php
+RewriteRule (.*) index.php [L,E=PATH_INFO:/$1]

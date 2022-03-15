@@ -1,0 +1,46 @@
+<form action="<?=App::config('url')?>polaznik/index" method="get">
+    <input type="text" name="uvjet" 
+    placeholder="Unesite dio imena, prezimena ili OIB-a"
+    value="<?=$uvjet?>" />
+</form>
+
+<nav aria-label="Pagination">
+  <ul class="pagination">
+    <li class="pagination-previous"><a href="<?=App::config('url')?>polaznik/index?uvjet=<?=$uvjet?>&stranica=<?php echo $stranica-1;?>" aria-label="Next page">Prethodna <span class="show-for-sr">stranica</span></a></li>
+    <li class="current"><span class="show-for-sr">Vi ste na stranici</span> 
+        <?=$stranica?>/<?=$ukupnoStranica?>
+    </li>
+    <li class="pagination-next"><a href="<?=App::config('url')?>polaznik/index?uvjet=<?=$uvjet?>&stranica=<?php echo $stranica+1;?>" aria-label="Next page">Sljedeće <span class="show-for-sr">page</span></a></li>
+  </ul>
+</nav>
+
+<div class="grid-x grid-padding-x">
+    <?php include 'dodajNovi.phtml';?>
+    <?php foreach($polaznici as $polaznik): ?>
+        <div class="large-3 medium-4 cell">
+            <div class="callout"  style="text-align: center; min-height: 220px;">
+            <h1 style="font-size: 1.5rem;">
+            <?=$polaznik->ime?> <?=$polaznik->prezime?></h1>
+            <hr />
+            <?=$polaznik->email?>
+            <hr />
+            <a href="<?=App::config('url')?>polaznik/detalji/<?=$polaznik->sifra?>">
+                    <i title="Promjeni" 
+                        class="fas fa-2x fa-edit"></i>
+                </a>   
+                <?php if($polaznik->grupa==0): ?>
+                    <a onclick="return confirm('Sigurno obrisati?');" style="margin-left: 20px;" href="<?=App::config('url')?>polaznik/brisanje/<?=$polaznik->sifra?>">
+                        <i style="color: red" title="Obriši " 
+                            class="fas fa-2x fa-trash"></i>
+                    </a>  
+                <?php else:?>
+                    <i style="margin-left: 20px;color: gray" 
+                    title="Ne može se obrisati jer predaje na grupi" 
+                            class="fas fa-2x fa-trash"></i>
+                <?php endif;?>
+            </div>
+           
+        </div>
+    <?php endforeach;?>
+    <?php include 'dodajNovi.phtml';?>
+</div>

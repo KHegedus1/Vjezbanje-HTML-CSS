@@ -1,0 +1,46 @@
+<form action="<?=App::config('url')?>smjer/promjeni" method="post">
+
+    <fieldset>
+        <legend>Promjena postojećeg smjera</legend>
+
+
+        <label>
+            Naziv
+            <input type="text" name="naziv" value="<?=$smjer->naziv?>" />
+        </label>
+
+        <!-- ispravnije -->
+        <label for="trajanje">Trajanje</label>
+        <input type="number" name="trajanje" id="trajanje" 
+        pattern="[0-9]{10}" value="<?=$smjer->trajanje?>">
+
+        <label for="cijena">Cijena</label>
+        <input type="text" name="cijena" id="cijena" value="<?=$smjer->cijena?>">
+
+        <p>Certificiran</p>
+
+        <input type="radio" name="certificiran" id="da" 
+        <?php if($smjer->certificiran) echo 'checked="checked"'; ?>
+        value="1">
+        <label for="da">DA</label>
+        <br />
+        <input type="radio" name="certificiran" id="ne" 
+        <?php if(!$smjer->certificiran) echo 'checked="checked"'; ?>
+        values="0">
+        <label for="ne">NE</label>
+
+        <input type="hidden" name="sifra" value="<?=$smjer->sifra?>">
+
+        <div class="grid-x grid-padding-x">
+            <div class="large-4 cell">
+                <a  class="alert button expanded" 
+                href="<?=App::config('url')?>smjer/index">Odustani</a>
+            </div>
+            <div class="large-8 cell">
+                <input type="submit" class="success button expanded" value="Promjeni">
+            </div>
+        </div>
+        <?=$poruka?>
+
+    </fieldset>
+</form>
